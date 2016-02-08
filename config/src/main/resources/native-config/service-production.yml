@@ -1,0 +1,3 @@
+# the configuration served to the config clients
+
+message: Hello World

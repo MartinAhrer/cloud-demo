@@ -1,0 +1,25 @@
+allprojects {
+    buildscript {
+        repositories {
+            jcenter()
+            maven { url "http://repo.spring.io/snapshot" }
+            maven { url "http://repo.spring.io/milestone" }
+        }
+        dependencies {
+            classpath 'io.spring.gradle:dependency-management-plugin:0.5.4.RELEASE'
+        }
+    }
+
+    apply plugin: 'idea'
+
+    repositories {
+        jcenter()
+        maven { url "http://repo.spring.io/snapshot" }
+        maven { url "http://repo.spring.io/milestone" }
+    }
+
+    //TODO: Continuous Delivery:transform the version into a build number that is incremented with each build
+    version = "0.0.1"
+    group = "at.martinahrer"
+}
+

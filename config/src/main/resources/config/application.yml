@@ -1,0 +1,13 @@
+# The configuration for the config application
+spring:
+  profiles:
+    active: native
+
+  cloud:
+    config:
+      server:
+        native:
+          searchLocations: classpath:/native-config
+
+server:
+  port: 8888

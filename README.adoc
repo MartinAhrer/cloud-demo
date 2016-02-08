@@ -1,0 +1,20 @@
+= README
+
+This sample demonstrates the
+We setup a custom bridge typed network that allows all containers within the network to communicate with each other.
+
+
+[source, shell]
+--
+docker network create --driver bridge cloud
+--
+
+[source, shell]
+--
+docker run -p 8888:8888 -itd --name config --net cloud martinahrer/config:0.0.1
+--
+
+[source, shell]
+--
+docker run -p 8080:8080 -itd --net=cloud --link=config:config --name=service-0.0.1 martinahrer/service:0.0.1
+--
